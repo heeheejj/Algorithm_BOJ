@@ -10,7 +10,6 @@ for i in range(n):
     count = 0
 print(result)
 
-
 # f-string 포메팅으로 변수를 문자열에 바로 대입
 a = 1
 b = 2
