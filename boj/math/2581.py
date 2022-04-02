@@ -1,6 +1,4 @@
 # 소수
-# 8:46 ~ 8:58
-#
 
 def isPrimeNumber(x):
   if x == 1:
