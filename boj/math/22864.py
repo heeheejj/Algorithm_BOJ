@@ -1,5 +1,4 @@
 # 피로도
-# 10:51~11:15
 a, b, c, m = map(int, input().split())
 
 p = 0
