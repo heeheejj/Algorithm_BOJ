@@ -5,7 +5,8 @@
 # gcd(a, b) = gcd(b, r)이 된다. (a와 b의 최대공약수 = b와 a % b의 최대공약수)
 # 만약 r이 0 이면, a, b의 최대공약수는 b (식으로 표현하면 a % b = 0 이면 gcd(a, b) = b)
 # a, b의 최소 공배수는 a * b를 a, b의 최대공약수로 나눈 몫이다.
-# lcm(a, b) = a * b // gcd(a, b)
+# 식으로 표현하면 lcm(a, b) = a * b // gcd(a, b)
+
 # 5618번, 2609번
 
 def gcd(a, b):
