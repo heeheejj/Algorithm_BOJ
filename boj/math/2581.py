@@ -13,6 +13,7 @@ m = int(input())
 n = int(input())
 sum = 0
 min = 0
+
 for i in range(n, m-1, -1):
   if isPrimeNumber(i):  # 만약 소수이면
     sum += i

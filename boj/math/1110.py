@@ -2,7 +2,9 @@
 
 count = 0
 def func(x):
+  
   global count
+  
   if x == n and count != 0:
     return
     
@@ -14,7 +16,6 @@ def func(x):
     return func((x % 10)*10 + (x // 10 + x % 10) % 10)
     
 n = int(input())
-
 
 func(n)
 print(count)

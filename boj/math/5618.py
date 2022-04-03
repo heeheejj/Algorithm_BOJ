@@ -19,4 +19,5 @@ gcd_value = gcd(inputs[0], gcd(inputs[1], inputs[-1]))  # 인덱스 -1는 리스
 for i in range(1, gcd_value // 2 + 1):
   if gcd_value % i == 0:
     print(i, end='\n')
+    
 print(gcd_value)

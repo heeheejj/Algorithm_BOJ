@@ -13,7 +13,9 @@ def isPrimeNumber(x):
 n = int(input())
 inputs = list(map(int, input().split()))
 count = 0
+
 for i in inputs:
   if isPrimeNumber(i) == 1:
     count += 1
+    
 print(count)

@@ -10,8 +10,10 @@ def lcm(a, b):
 
 n = int(input())
 results = list()
+
 for i in range(n):
   a, b = map(int, input().split())
   results.append(lcm(a, b))
+  
 for i in results:
   print(i)
