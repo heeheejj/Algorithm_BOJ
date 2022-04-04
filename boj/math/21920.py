@@ -16,8 +16,7 @@ x = int(input())
 
 sum = 0
 count = 0
-for i in range(n):
-  num = inputs[i]
+for num in inputs:
   if isCoprime(x, num):
     sum += num
     count += 1
