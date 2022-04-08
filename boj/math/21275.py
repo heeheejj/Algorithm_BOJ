@@ -15,7 +15,7 @@ for a in range(2, 37):
       A = a
       B = b
       print(str(Xa)+"/"+str(Xb))
-      if Xa == Xb:
+      if Xa == Xb and Xa != 0:
         count += 1
         X = Xa
       else:
