@@ -1,11 +1,13 @@
 # 폰 호석만
 # 4:57~
+import time
+start = time.time()
 
 def transform(x, n):
   result = 0
   for i in range(len(x)):
-    if ord(x[i]) >= 97:
-      result += (ord(x[i]) - 97 + 10) * n**(len(x) - 1 - i)
+    if ord(x[i]) >= ord('a'):
+      result += (ord(x[i]) - ord('a') + 10) * n**(len(x) - 1 - i)
     else:
       result += int(x[i])*n**(len(x) - 1 - i)
   return result
@@ -43,8 +45,8 @@ for a in range(max_Xa, 37):
 if count > 1 or X == 0:
   print("Multiple")
 elif count == 1:
-  print(X, end = " ")
-  print(A, end = " ")
-  print(B)
+  print(X, " ", A, " ", B)
 else:
   print("Impossible")
+
+print("time :", time.time() - start)
