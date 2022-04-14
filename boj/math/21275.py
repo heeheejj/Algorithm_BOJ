@@ -34,7 +34,7 @@ for i in range(len(Xb)):
 for a in range(max_Xa, 37): 
   for b in range(max_Xb, 37):
     temp_Xa = transform(Xa, a)
-    if a == b or temp_Xa >= 2**63:
+    if a == b or temp_Xa >= 2**63:  # 주의: 문제 제한 조건으로 A != B, 0 <= X < 2**63 이 있음
       break
     if temp_Xa == transform(Xb, b):
       A, B = a, b
