@@ -6,20 +6,35 @@ from itertools import permutations
 from itertools import combinations
 from itertools import combinations_with_replacement
 
-def getPrimeNumbers(x):
+def getPrimeNumbers(x):  # 부울 리스트 반환하도록 변경했는데..음
   numbers = list(range(10**(k-1), 10**k))
   start, end = numbers[0], numbers[-1]+1
   if start < 2:
     start = 2
-  _primes = list()
+  # _primes = list()
   sieve = [True] * end
   
   for i in range(2, end):
-    if sieve[i] != False:
-      _primes.append(i)
+    # if sieve[i] != False:
+    #   _primes.append(i)
     for j in range(i * 2, end, i):
         sieve[j] = False
-  return _primes
+  return sieve
+
+# def getPrimeNumbers(x):
+#   numbers = list(range(10**(k-1), 10**k))
+#   start, end = numbers[0], numbers[-1]+1
+#   if start < 2:
+#     start = 2
+#   _primes = list()
+#   sieve = [True] * end
+  
+#   for i in range(2, end):
+#     if sieve[i] != False:
+#       _primes.append(i)
+#     for j in range(i * 2, end, i):
+#         sieve[j] = False
+#   return _primes
 
 def isSumOfDifferentPrimeNumber(x):
   for i, j in combinations(primes, 2):
