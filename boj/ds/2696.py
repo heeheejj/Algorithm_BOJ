@@ -35,8 +35,6 @@ def getMiddle(inputs):  #입려값 전체를 파라미터로 받음
     if (i+1) % 20 == 0 or i == len(inputs) - 1:
       print()
       
-      
-    
 input = sys.stdin.readline
 
 t = int(input())
@@ -52,13 +50,3 @@ for _ in range(t):
     for _ in range(m // 10 + 1):
       inputs.extend(list(map(int, input().split())))
   getMiddle(inputs)
-
-  # for i in range(len(heap)):
-  #   for i in range(len(heap)):
-  #     heapq.heappush(heap, heap[i])
-  #     if i % 2 == 0:  # 홀수번째(idx값은 짝수) 숫자이면 중앙값 출력
-  #       print("i:",i," i//2:", i//2)
-  #       print(heap)
-  #       print(heap[i // 2], end = ' ')
-
-  #   print()
