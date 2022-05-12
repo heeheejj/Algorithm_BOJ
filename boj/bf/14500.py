@@ -5,7 +5,9 @@ import sys
 def dfs(i, j, cnt, sum):
   global result
 
-  
+  # 현재 dfs에서 남은 블록이 모두 최댓값(max_sum)과 같더라도 현재 result보다 작다면 바로 return
+  if result >= sum + max_sum * (4 - cnt):
+    return
   
   if cnt == 4:
     result = max(result, sum)
