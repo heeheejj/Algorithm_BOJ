@@ -13,7 +13,7 @@ def dfs(i, j, cnt, sum):
     result = max(result, sum)
     return
   else:
-    for k in range(4):
+    for k in range(4):  # 동서남북 방향으로 이동해서 dfs 다시 호출
       ny = i + dy[k]
       nx = j + dx[k]
 
@@ -32,6 +32,7 @@ n, m = map(int, input().split())
 paper = [list(map(int, input().split())) for _ in range(n)]
 visited = [([False] * m) for _ in range(n)]
 
+# 동서남북 방향으로 이동하기 위해 dx, dy 리스트 각각 만들기
 dy = [0, 1, 0, -1]
 dx = [-1, 0, 1, 0]
 
