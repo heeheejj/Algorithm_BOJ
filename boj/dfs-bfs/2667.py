@@ -1,4 +1,4 @@
-# 단지번호붙이기
+# 단지번호붙이기 - 이코테 5-3.음료수 얼려먹기 문제와 유사
 import sys
 
 input = sys.stdin.readline
