@@ -5,7 +5,6 @@ input = sys.stdin.readline
 n = int(input())
 _map = [list(map(int, input().rstrip())) for _ in range(n)]
 
-
 def dfs(x, y):
     if x < 0 or x > n - 1 or y < 0 or y > n - 1:
         # print("범위 밖:",x,",",y)
@@ -28,7 +27,6 @@ def dfs(x, y):
         return True
     # print("이미 방문:",x,',',y)
     return False  # 이미 방문한 집이면 dfs 호출할 필요 X, house_count에도 포함 X, False 리턴
-
 
 total_count = 0
 house_counts = list()
