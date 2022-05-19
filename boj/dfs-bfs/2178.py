@@ -1,6 +1,7 @@
 # 미로 탐색 - 나동빈 이코테 5-4. 미로 탈출과 같은 문제
 
 from collections import deque
+import sys
 
 def bfs(x, y):
   queue = deque()
@@ -21,12 +22,12 @@ def bfs(x, y):
         graph[nx][ny] = graph[x][y] + 1 # graph는 원소가 0, 1뿐인 2차원 배열이지만 이렇게 1씩 더해주어 다시 저장해 1, 2, 3, ... 이런식으로 경로가 찍히도록 최단거리의 길이 찾기
     
   return graph[n-1][m-1]
-
+input = sys.stdin.readline
 n, m = map(int,input().split())
 
 graph = []
 for i in range(n):
-    graph.append(list(map(int,input())))
+    graph.append(list(map(int,input().rstrip())))
 
 # dx - dy 순서대로 
 # 상: (-1,0), 하: (1, 0), 좌: (0, -1), 우: (0, 1)
