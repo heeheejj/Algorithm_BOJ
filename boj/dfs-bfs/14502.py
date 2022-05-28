@@ -1,9 +1,9 @@
 # 연구소
+# 2차원 리스트의 깊은 복사는 deepcopy 모듈보다 [row[:] for row in matrix]를 이용하는것이 빠름.
 
 import sys
 from itertools import combinations
 from collections import deque
-from copy import deepcopy
 
 def createWall(locations):  #조합의 결과 (3개의 튜플 리스트)
   for x, y in locations:
@@ -52,7 +52,8 @@ result = 0
 # 벽 세울 위치 3군데 고르기 (조합 이용)
 for locations in combinations(zeros, 3):
   temp_map = list()
-  temp_map = deepcopy(_map) # 리스트 복제해서 temp_map 초기화
+  temp_map = [row[:] for row in _map] # 리스트 복제해서 temp_map 초기화
+  # 깊은 복사는 deepcopy보다 이 방식이 더 빠름!!! 
   # print(locations)
   createWall(locations)
   # print(temp_map)
