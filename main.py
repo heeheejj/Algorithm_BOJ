@@ -1,4 +1,4 @@
-ㅣcnt_list = list()
+cnt_list = list()
 for i in range(6, 127):
   cnt = 0
   # print("i",i)
