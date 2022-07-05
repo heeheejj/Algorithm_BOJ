@@ -1,6 +1,7 @@
 # 설탕 배달
 
 N = int(input())
+
 cnt = 0
 while N >= 0:
   if N % 5 == 0:
