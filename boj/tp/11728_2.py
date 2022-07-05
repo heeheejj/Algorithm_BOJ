@@ -1,18 +1,28 @@
 # 배열 합치기
-# 그냥 배열 합쳐서 sort
+# 투 포인터 - 1324ms
 
 import sys
 
 input = sys.stdin.readline
 n, m = map(int, input().split())
 
-# ??? 그냥 정렬해보자
 a = list(map(int, input().split()))
-
 b = list(map(int, input().split()))
 
-c = a + b
-c.sort()
+ap, bp = 0, 0
+result = list()
+while ap != n or bp != m:
+  if ap == n:
+    result.append(b[bp])
+    bp += 1
+  elif bp == m:
+    result.append(a[ap])
+    ap += 1
+  elif a[ap] < b[bp]:
+    result.append(a[ap])
+    ap += 1
+  elif a[ap] >= b[bp]:
+    result.append(b[bp])
+    bp += 1
 
-for x in c:
-  print(x, end=' ')
+print(*result)  # list 앞에 * 붙이면 unpacking
