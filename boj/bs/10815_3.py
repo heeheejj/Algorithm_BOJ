@@ -1,6 +1,6 @@
 # 숫자 카드
 # binary search (=이분탐색=이진탐색)
-# 시간 초과.....
+# 시간 초과..... -> 무한루프..-> if x == a[mid]: 여기서 break안해줘서였음..
 
 import sys
 
@@ -22,6 +22,7 @@ for x in b:  # M개의 숫자카드에 대해서
     mid = (start + end) // 2
     if x == a[mid]:
       result = 1
+      break
     elif x < a[mid]:  # target이 중간점보다 왼쪽에 있다면
       end = mid - 1
     else:  # target이 중간점보다 오른쪽에 있다면
