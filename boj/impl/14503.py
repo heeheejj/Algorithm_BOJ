@@ -1,5 +1,8 @@
 # 로봇 청소기
 
+# 시간: 112ms
+# 유형: 구현
+
 import sys
 
 def clean1(r, c, d):
