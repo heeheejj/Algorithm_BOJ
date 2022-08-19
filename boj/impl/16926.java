@@ -16,6 +16,7 @@ public class Main_16926_배열돌리기1_정희주 {
     static int M;
     static int R;
 
+  
     static void rotate(int depth){
         // 각 depth의 시작 좌표 (가장 왼쪽이자 가장 위쪽인 좌표)
         int nx = depth; // 시작 x좌표
