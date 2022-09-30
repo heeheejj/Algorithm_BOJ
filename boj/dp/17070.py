@@ -24,7 +24,7 @@ dp[0][0][1] = 1
 for i in range(2, N-1):
     if _map[0][i] == 1:
         break
-    dp[0][0][i] = dp[0][0][i-1]
+    dp[0][0][i] = 1
 
 for i in range(1, N):
     for j in range(2, N):
