@@ -7,10 +7,9 @@ import sys
 sys.stdin = open("input.txt", "r")
 input = sys.stdin.readline
 
-def bfs(x, y):
-    global result
+def bfs():
     queue = deque()
-    queue.append((x, y, 0))
+    queue.append((0, 0, K))
 
     while queue:
         x, y, z = queue.popleft()
@@ -25,20 +24,20 @@ def bfs(x, y):
             if nx < 0 or nx >= H or ny < 0 or ny >= W:
                 continue
 
-            if graph[nx][ny] == 0 and visited[nx][ny][z] == 0: # nx, ny위치에 벽이 없고, 방문한 적 없을 때
+            if graph[nx][ny] != 1 and visited[nx][ny][z] == 0: # nx, ny위치에 벽이 없고, 방문한 적 없을 때
                 visited[nx][ny][z] = visited[x][y][z]+1
                 queue.append((nx, ny, z))
 
         # 말의 움직임
-        if z < K-1:
+        if z > 0:
             for i in range(8):
                 nx = x + mx[i]
                 ny = y + my[i]
                 if nx < 0 or nx >= H or ny < 0 or ny >= W:
                     continue
-                if graph[nx][ny] == 0 and visited[nx][ny][z] == 0:
-                    queue.append((nx, ny, z + 1))
-                    visited[nx][ny][z + 1] = visited[x][y][z]+1
+                if graph[nx][ny] != 1 and visited[nx][ny][z-1] == 0:
+                    queue.append((nx, ny, z-1))
+                    visited[nx][ny][z-1] = visited[x][y][z]+1
 
     return -1
 
@@ -47,7 +46,7 @@ K = int(input())
 W, H = map(int, input().split())
 
 graph = [list(map(int, input().split())) for _ in range(H)]
-visited = [[[0]*K for _ in range(W)] for _ in range(H)]
+visited = [[[0]*(K+1) for _ in range(W)] for _ in range(H)]
 # for i in range(h):
 #     graph.append(list(map(int,input().split())))
 
@@ -62,11 +61,5 @@ mx = [-1, 1, -1, 1, 2, -2, 2, -2]
 my = [-2, -2, 2, 2, -1, -1, 1, 1]
 # print(graph)
 
-result = 0
 # bfs 호출!
-bfs(0, 0)
-# print(result)
-if result == 0:
-    print(-1)
-else:
-    print(result)
+print(bfs())
