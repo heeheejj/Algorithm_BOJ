@@ -10,7 +10,7 @@ heights.sort()
 
 lo, hi = 0, max(heights)
 result = 0
-while lo <= hi:
+while lo+1 < hi:
   sum = 0
   mid = (lo + hi) // 2
   for h in heights:
@@ -19,9 +19,9 @@ while lo <= hi:
       sum += temp
 
   if M > sum:
-    hi = mid - 1
+    hi = mid
   else:
-    lo = mid + 1
-    result = mid
+    lo = mid
+    #result = mid
     
-print(result)
+print(lo)
